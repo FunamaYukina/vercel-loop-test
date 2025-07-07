@@ -1,14 +1,12 @@
-# .github/workflows/test-loop.yml
-name: Loop Test
-
+# .github/workflows/test-loop-2.yml
+name: Loop Test 2
 on:
   deployment_status:
-
 jobs:
   test:
     runs-on: ubuntu-latest
     environment:
-      name: Preview-test  # ← this cause infinite loop
+      name: Preview-test-2
     steps:
       - name: Check deployment status
         run: |
@@ -19,3 +17,4 @@ jobs:
 
       - name: Simple test
         run: echo "Running test simulation"
+
