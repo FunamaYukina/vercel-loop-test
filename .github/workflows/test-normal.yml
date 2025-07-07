@@ -1,0 +1,17 @@
+# .github/workflows/test-normal.yml
+name: Normal Test
+
+on:
+  deployment_status:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    # no environment
+    steps:
+      - name: Check deployment status
+        run: |
+          echo "Event: ${{ github.event_name }}"
+          echo "State: ${{ github.event.deployment_status.state }}"
+          echo "Environment: ${{ github.event.deployment.environment }}"
+          echo "URL: ${{ github.event.deployment_status.target_url }}"
