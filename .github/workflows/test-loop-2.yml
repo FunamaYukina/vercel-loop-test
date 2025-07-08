@@ -1,0 +1,20 @@
+# .github/workflows/test-loop-2.yml
+name: Loop Test 2
+on:
+  deployment_status:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    # environment:
+    #   name: Preview-test-2
+    steps:
+      - name: Check deployment status
+        run: |
+          echo "Event: ${{ github.event_name }}"
+          echo "State: ${{ github.event.deployment_status.state }}"
+          echo "Environment: ${{ github.event.deployment.environment }}"
+          echo "URL: ${{ github.event.deployment_status.target_url }}"
+
+      - name: Simple test
+        run: echo "Running test simulation"
+
