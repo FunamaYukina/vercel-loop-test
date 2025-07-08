@@ -1,0 +1,24 @@
+# .github/workflows/test-repository-dispatch-1.yml
+name: Repository Dispatch Test 1
+
+on:
+  repository_dispatch:
+    types: ['vercel.deployment.success']
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to deploy to"
+        required: true
+        default: "Preview"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    # no environment
+    steps:
+      - name: Check deployment status
+        run: |
+          echo "Event: ${{ github.event_name }}"
+          echo "State: ${{ github.event.deployment_status.state }}"
+          echo "Environment: ${{ github.event.deployment.environment }}"
+          echo "URL: ${{ github.event.deployment_status.target_url }}"
