@@ -14,7 +14,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    # no environment
+    environment:
+      name: Preview-test-2
     steps:
       - name: Check deployment status
         run: |
