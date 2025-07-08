@@ -1,12 +1,12 @@
 # .github/workflows/test-loop-2.yml
-name: Loop Test 2
+name: Loop Test Re 2
 on:
   deployment_status:
 jobs:
   test:
     runs-on: ubuntu-latest
-    # environment:
-    #   name: Preview-test-2
+    environment:
+      name: Preview-test-2
     steps:
       - name: Check deployment status
         run: |

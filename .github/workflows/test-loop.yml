@@ -1,5 +1,5 @@
 # .github/workflows/test-loop.yml
-name: Loop Test
+name: Loop Test Re 1
 
 on:
   deployment_status:
@@ -7,8 +7,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    # environment:
-    #   name: Preview-test  # ← this cause infinite loop
+    environment:
+      name: Preview-test  # ← this cause infinite loop
     steps:
       - name: Check deployment status
         run: |
